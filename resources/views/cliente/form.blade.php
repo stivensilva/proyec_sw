@@ -133,7 +133,7 @@
         </div>
         <div class="col-3">
             {{ Form::label('') }}
-            {{ Form::text('id_zona', $cliente->id_zona, ['class' => 'form-control' . ($errors->has('id_zona') ? ' is-invalid' : ''), 'placeholder' => 'Id Zona']) }}
+            {{ Form::select('id_zona', $zona, null, ['class' => 'form-control' . ($errors->has('id_zona') ? ' is-invalid' : ''), 'placeholder' => 'Id Zona']) }}
             {!! $errors->first('id_zona', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="col-3">

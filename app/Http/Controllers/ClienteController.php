@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Zona;
 use Illuminate\Http\Request;
 
 /**
@@ -37,7 +38,8 @@ class ClienteController extends Controller
     public function create()
     {   
         $cliente = new Cliente();
-        return view('cliente.create', compact('cliente'));
+        $zona = Zona::pluck('descripcion_zona','id_zona');
+        return view('cliente.create', compact('cliente','zona'));
     }
 
     /**
